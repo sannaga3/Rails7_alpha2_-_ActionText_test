@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
+
+<hr>
+<p>excel output</p>
+<%= link_to "Excel出力", posts_path(@posts, format: :xlsx) %>
 <hr>
 <div id="posts">
   <%= render @posts %>

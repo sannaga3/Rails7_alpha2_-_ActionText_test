@@ -4,6 +4,13 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+
+    respond_to do |format|
+      format.html
+      format.xlsx do
+        response.headers['Content-Disposition'] = "attachment; filename=#{Date.today}.xlsx"
+      end
+    end
   end
 
   # GET /posts/1 or /posts/1.json

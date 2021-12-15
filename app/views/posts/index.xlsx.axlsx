@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "投稿一覧") do |sheet|
+  @posts.each_with_index do |post, index|
+    sheet.add_row [ index, post.title, post.content ]
+  end
+end
